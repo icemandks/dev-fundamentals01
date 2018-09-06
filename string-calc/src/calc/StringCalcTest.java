@@ -13,7 +13,7 @@ public class StringCalcTest {
 		int expected = 0;
 		StringCalc calc = new StringCalc();
 		
-		Assert.assertEquals(expected, calc.sum(text));
+		Assert.assertEquals(expected, calc.Add(text));
 	}
 
 	@Test
@@ -22,7 +22,7 @@ public class StringCalcTest {
 		int expected = 1;
 		StringCalc calc = new StringCalc();
 		
-		Assert.assertEquals(expected, calc.sum(text));
+		Assert.assertEquals(expected, calc.Add(text));
 	}
 
 	@Test
@@ -31,7 +31,7 @@ public class StringCalcTest {
 		int expected = 3;
 		StringCalc calc = new StringCalc();
 		
-		Assert.assertEquals(expected, calc.sum(text));
+		Assert.assertEquals(expected, calc.Add(text));
 	}
 
 	@Test(expected = Exception.class)
@@ -40,7 +40,7 @@ public class StringCalcTest {
 		int expected = 0;
 		StringCalc calc = new StringCalc();
 		
-		Assert.assertEquals(expected, calc.sum(text));
+		Assert.assertEquals(expected, calc.Add(text));
 	}
 
 }

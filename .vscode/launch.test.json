@@ -1,0 +1,48 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "unit-tests",
+                "projectName": "unit-tests",
+                "workingDirectory": "/TrabajosLocal/stash/dev-fundamentals01/unit-tests",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "string-calc",
+                "projectName": "string-calc",
+                "workingDirectory": "/TrabajosLocal/stash/dev-fundamentals01/string-calc",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "unit-tests",
+                "projectName": "unit-tests",
+                "workingDirectory": "/TrabajosLocal/stash/dev-fundamentals01/unit-tests",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "string-calc",
+                "projectName": "string-calc",
+                "workingDirectory": "/TrabajosLocal/stash/dev-fundamentals01/string-calc",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
