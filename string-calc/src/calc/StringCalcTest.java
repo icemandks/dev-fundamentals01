@@ -3,7 +3,9 @@ package calc;
 import static org.junit.Assert.*;
 
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class StringCalcTest {
 
@@ -60,16 +62,51 @@ public class StringCalcTest {
 			text += i;
 			expected += i;
 		}
-		System.out.print(text);
+
 		Assert.assertEquals(expected, this.calc.Add(text));
 	}
 
-	@Test(expected = Exception.class)
-	public void StringCalc_sum_testnotnumber() {
-		String text = "1,*,4";
-		int expected = 5;
-		
+	@Test
+	public void StringCalc_sum_test1customdelimiter() {
+		String text = "//[;]\n1;2;3";
+		int expected = 6;
+
 		Assert.assertEquals(expected, this.calc.Add(text));
+	}
+
+	@Test
+	public void StringCalc_sum_test2customdelimiter() {
+		String text = "//[;][-]\n1;2-3";
+		int expected = 6;
+
+		Assert.assertEquals(expected, this.calc.Add(text));
+	}
+
+	@Test
+	public void StringCalc_sum_test3customdelimiter() {
+		String text = "//[;][#][--]\n1;2--3,4,5#6";
+		int expected = 21;
+
+		Assert.assertEquals(expected, this.calc.Add(text));
+	}
+
+	// NEGATIVE TESTING
+	@Rule
+	public ExpectedException exceptionRule = ExpectedException.none();
+	
+	// @Test
+	// public void whenExceptionThrown_thenRuleIsApplied() {
+	// 	exceptionRule.expect(NumberFormatException.class);
+	// 	exceptionRule.expectMessage("For input string");
+	// 	Integer.parseInt("1a");
+	// }
+	
+	@Test
+	public void StringCalc_sum_testnotnumber() {
+		exceptionRule.expect(Exception.class);
+		// exceptionRule.expectMessage("Exception occurred: For input string:");
+		String text = "1,*,4";
+		this.calc.Add(text);
 	}
 
 	@Test(expected = Exception.class)
@@ -77,6 +114,14 @@ public class StringCalcTest {
 		String text = "1,3\n,4";
 		int expected = 8;
 		
+		Assert.assertEquals(expected, this.calc.Add(text));
+	}
+
+	@Test(expected = Exception.class)
+	public void StringCalc_sum_testformatcustomdelimiter() {
+		String text = "//[;\n1;2;3";
+		int expected = 6;
+
 		Assert.assertEquals(expected, this.calc.Add(text));
 	}
 
