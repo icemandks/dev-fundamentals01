@@ -3,16 +3,22 @@ package calc;
 import static org.junit.Assert.*;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 public class StringCalcTest {
 
-	private StringCalc calc = new StringCalc();
+	private StringCalc calc;
+	
+	@Before
+	public void SetUp() {
+		this.calc = new StringCalc();
+	}
 
 	@Test
-	public void StringCalc_sum_testEmpty() throws Exception {
+	public void StringCalc_sum_testEmpty() {
 		String text = "";
 		int expected = 0;
 		

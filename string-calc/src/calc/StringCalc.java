@@ -83,6 +83,7 @@ public class StringCalc {
 	
 	public static void main(String[] args) {
 		StringCalc cal = new StringCalc();
-		System.out.print(cal.Add("//[;][-]\n1,2\n55-4-2;5"));
+//		System.out.print(cal.Add("//[;][-]\n1,2\n55-4-2;5"));
+		System.out.print(cal.Add("1"));
 	}
 }
