@@ -10,32 +10,13 @@ public class StringCalc {
 	private List<String> customDelimiters = new ArrayList<String>();
 	
 	public int Add(String text) {
-//		List<String> digits = Arrays.asList(text.split(","));
+
 		try {
 			if (text.substring(0, 2).equals("//")){
-				text = text.substring(2);
-
-				while(text.substring(0, 1).equals("[")){
-					int closeDelimiter = text.indexOf("]");
-
-					if (closeDelimiter == -1){
-						throw new Exception("Wrong format for custom delimiter, no closing bracket ] for the delimiter");
-					}
-
-					this.customDelimiters.add(text.substring(1, closeDelimiter));
-					text = text.substring(closeDelimiter + 1);
-				}
-
-				if (text.substring(0,1).equals("\n")){
-					this.updateRegex();
-					text = text.substring(1);
-				}
-				else {
-					throw new Exception("Wrong format for custom delimiter, no new line after the delimiters declaration");
-				}
+				text = this.getDelimiters(text);
 			}
 
-			String[] digitStrings = text.split(regex);
+			String[] digitStrings = text.split(this.regex);
 
 			for (String digit : digitStrings) {
 				int number = Integer.parseInt(digit);
@@ -58,6 +39,31 @@ public class StringCalc {
 		}
 		return this.result;
 	}
+
+	private String getDelimiters(String cadena) throws Exception {
+		String text = cadena.substring(2);
+
+		while(text.substring(0, 1).equals("[")){
+			int closeDelimiter = text.indexOf("]");
+
+			if (closeDelimiter == -1){
+				throw new Exception("Wrong format for custom delimiter, no closing bracket ] for the delimiter");
+			}
+
+			this.customDelimiters.add(text.substring(1, closeDelimiter));
+			text = text.substring(closeDelimiter + 1);
+		}
+
+		if (text.substring(0,1).equals("\n")){
+			this.updateRegex();
+			text = text.substring(1);
+		}
+		else {
+			throw new Exception("Wrong format for custom delimiter, no new line after the delimiters declaration");
+		}
+
+		return text;
+	}
 	
 	private int sum(List<Integer> list) {
 		int total = 0;
@@ -77,6 +83,6 @@ public class StringCalc {
 	
 	public static void main(String[] args) {
 		StringCalc cal = new StringCalc();
-		System.out.print(cal.Add("//[;]\n1,2\n55-4-2;5"));
+		System.out.print(cal.Add("//[;][-]\n1,2\n55-4-2;5"));
 	}
 }

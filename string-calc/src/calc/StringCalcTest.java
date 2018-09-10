@@ -12,7 +12,7 @@ public class StringCalcTest {
 	private StringCalc calc = new StringCalc();
 
 	@Test
-	public void StringCalc_sum_testEmpty() {
+	public void StringCalc_sum_testEmpty() throws Exception {
 		String text = "";
 		int expected = 0;
 		
