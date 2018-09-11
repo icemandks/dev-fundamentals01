@@ -73,6 +73,14 @@ public class StringCalcTest {
 	}
 
 	@Test
+	public void StringCalc_sum_test1000() {
+		String text = "1,3\n1000,4,3000";
+		int expected = 8;
+		
+		Assert.assertEquals(expected, this.calc.Add(text));
+	}
+
+	@Test
 	public void StringCalc_sum_test1customdelimiter() {
 		String text = "//[;]\n1;2;3";
 		int expected = 6;

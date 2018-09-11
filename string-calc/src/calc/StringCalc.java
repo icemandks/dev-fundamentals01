@@ -12,7 +12,7 @@ public class StringCalc {
 	public int Add(String text) {
 
 		try {
-			if (text.substring(0, 2).equals("//")){
+			if (text.length() > 1 && text.substring(0, 2).equals("//")){
 				text = this.getDelimiters(text);
 			}
 
@@ -24,7 +24,9 @@ public class StringCalc {
 				if (number < 0) {
 					throw new Exception("Negative numbers are not allowed");
 				}
-				this.inputs.add(number);
+				if (number < 1000) {
+					this.inputs.add(number);
+				}
 			}
 
 			this.result = this.sum(this.inputs);
@@ -83,6 +85,7 @@ public class StringCalc {
 	
 	public static void main(String[] args) {
 		StringCalc cal = new StringCalc();
+		String[] test = "1".split(",");
 //		System.out.print(cal.Add("//[;][-]\n1,2\n55-4-2;5"));
 		System.out.print(cal.Add("1"));
 	}
