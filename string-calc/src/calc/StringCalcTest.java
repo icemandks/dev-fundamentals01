@@ -74,6 +74,14 @@ public class StringCalcTest {
 
 	@Test
 	public void StringCalc_sum_test1000() {
+		String text = "2,1000";
+		int expected = 2;
+		
+		Assert.assertEquals(expected, this.calc.Add(text));
+	}
+
+	@Test
+	public void StringCalc_sum_test100more() {
 		String text = "1,3\n1000,4,3000";
 		int expected = 8;
 		

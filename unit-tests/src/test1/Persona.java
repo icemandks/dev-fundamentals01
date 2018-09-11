@@ -24,6 +24,6 @@ public class Persona {
 	}
 	
 	public void run (Persona persona) {
-		System.out.println("I am running with " + persona.getName());
+		System.out.println("I am running with: " + persona.getName());
 	}
 }
