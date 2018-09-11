@@ -82,10 +82,16 @@ public class StringCalc {
 			}
 		}
 	}
+
+	public void reset() {
+		this.result = 0;
+		this.inputs = new ArrayList<Integer>();
+	}
 	
 	public static void main(String[] args) {
 		StringCalc cal = new StringCalc();
-		System.out.print(cal.Add("//[;][-]\n1,2\n55-4-2;5"));
-		System.out.print(cal.Add("1"));
+		System.out.println(cal.Add("//[;][-]\n1,2\n55-4-2;5"));
+		cal.reset();
+		System.out.println(cal.Add("1"));
 	}
 }
