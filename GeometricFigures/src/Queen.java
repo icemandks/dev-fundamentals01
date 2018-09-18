@@ -22,6 +22,6 @@ public class Queen extends Figure {
 	  Figure queen1 = new Queen(1);
 //	  Figure queen2 = new Queen(0);
 	  
-	  System.out.println(queen1.whoAmI());
+	  System.out.println(queen1.getClass());
   }
 } // Queen
