@@ -2,15 +2,15 @@ package student;
 
 public class Student {
 	public final int NUM_OF_TESTS = 3;
-	private String name;
-	private int[] tests;
-	private String courseGrade;
-	
-	public void Student() {
+	protected String name;
+	protected int[] tests;
+	protected String courseGrade;
+
+	public Student() {
 		this("no name");
 	}
 
-	public void Student(String name) {
+	public Student(String name) {
 		this.name = name;
 		this.tests = new int[this.NUM_OF_TESTS];
 		this.courseGrade = "***";
@@ -37,7 +37,7 @@ public class Student {
 	}
 
 	public String computeCourseGrade() {
-
+		return "not implemented yet";
 	}
 
 	public static void main(String[] args) {
