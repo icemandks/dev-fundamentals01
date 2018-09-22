@@ -4,7 +4,26 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-    
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Square",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Figures.Square",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Rectangle",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Figures.Rectangle",
+            "args": ""
+        },
         {
             "type": "java",
             "name": "Debug (Launch)",
