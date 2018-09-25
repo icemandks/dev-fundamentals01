@@ -1,6 +1,6 @@
 package Figures;
 
-public abstract class GeometricFigure extends Figure {
+public abstract class GeometricFigure implements IFigure {
 	
 	protected String FigureName = new String();
 	protected String type = new String();

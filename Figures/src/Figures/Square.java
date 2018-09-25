@@ -19,6 +19,12 @@ public class Square extends Rectangle {
 		c.setTag("S-01");
 		c.drawTxt();
 		c.printDescription();
+		
+		IFigure[] figures = new IFigure[3];
+		
+		figures[0] = c;
+		figures[0].setTag("test");
+		figures[0].printDescription();
 	}
 
 }
